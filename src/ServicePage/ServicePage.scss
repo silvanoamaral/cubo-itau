@@ -1,0 +1,55 @@
+$color-icone: #04c1ff;
+
+.services {
+  max-width: 80%;
+  margin: 0 auto;
+
+  &_item {
+    display: flex;
+    justify-content: center;
+
+    .col {
+      text-align: left;
+
+      .material-icons {
+        color: $color-icone;
+        float: left;
+        height: 100%;
+        position: relative;
+        top: 20px;
+      }
+    }
+  }
+}
+
+//Ref: https://zellwk.com/blog/how-to-write-mobile-first-css/
+//https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+.gallery__item {
+  float: left;
+  margin-right: 5%;
+  margin-bottom: 5%;
+
+  @media (max-width: 800px) {
+    width: 30%;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+  // combining both min-width and max-width queries
+  @media (min-width: 800px) and (max-width: 1200px) {
+    width: 21.25%; // (100% - 15%) / 4
+    &:nth-child (4n) {
+      margin-right: 0;
+    }
+  }
+
+  @media (min-width: 1200px){
+    width: 16%; // (100% - 20%) / 5
+    &:nth-child (5n) {
+      margin-right: 0;
+    }
+  }
+}
